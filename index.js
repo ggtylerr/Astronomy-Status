@@ -9,8 +9,11 @@ const T = new Twit({
 
 // Make tweet function (so you can set it at an interval)
 function tweet() {
+  // Add current time to workaround duplicate status error
+  let t = new Date();
   T.post('statuses/update', { status: 
-    `MOON: Still there
+    `As of ${("0" + t.getHours()).slice(-2)}:00 UTC:
+MOON: Still there
 SUN: Still there
 STARS: Still there
 PLANETS: Still there
