@@ -11,15 +11,18 @@ const T = new Twit({
 function tweet() {
   T.post('statuses/update', { status: 
     `MOON: Still there
-    SUN: Still there
-    STARS: Still there
-    PLANETS: Still there
-    GALAXIES: Still there`
+SUN: Still there
+STARS: Still there
+PLANETS: Still there
+GALAXIES: Still there`
   }, callback);
 }
 
 // Set to tweet every hour
 setInterval(tweet, 60*60*1000);
+
+// Do the first tweet
+tweet();
 
 // Make callback function
 function callback(err, data, response) {
