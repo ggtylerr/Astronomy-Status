@@ -30,16 +30,16 @@ function callback(err, data, response) {
     console.log(err);
   } else {
     // Get date and time
-    let t = new Date(Date.now());
+    let t = new Date();
     let o = {
-      m: t.getMonth() + 1,
-      d: t.getDate(),
+      m: ("0" + (t.getMonth() + 1)).slice(-2),
+      d: ("0" + t.getDate()).slice(-2),
       y: t.getFullYear(),
-      h: t.getHours(),
-      m: t.getMinutes(),
-      s: t.getSeconds()
+      h: ("0" + t.getHours()).slice(-2),
+      mi: ("0" + t.getMinutes()).slice(-2),
+      s: ("0" + t.getSeconds()).slice(-2)
     }
-    let s = `${o.m}/${o.d}/${o.y} ${o.h}:${o.m}:${o.s}`;
+    let s = `${o.m}/${o.d}/${o.y} ${o.h}:${o.mi}:${o.s}`;
     console.log(`Updated board at ${s}`);
   }
 };
