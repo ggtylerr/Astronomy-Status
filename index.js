@@ -29,6 +29,17 @@ function callback(err, data, response) {
   if (err) {
     console.log(err);
   } else {
-    console.log('Updated board.');
+    // Get date and time
+    let t = new Date(Date.now());
+    let o = {
+      m: t.getMonth() + 1,
+      d: t.getDate(),
+      y: t.getFullYear(),
+      h: t.getHours(),
+      m: t.getMinutes(),
+      s: t.getSeconds()
+    }
+    let s = `${o.m}/${o.d}/${o.y} ${o.h}:${o.m}:${o.s}`;
+    console.log(`Updated board at ${s}`);
   }
 };
