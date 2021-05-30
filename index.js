@@ -21,8 +21,8 @@ GALAXIES: Still there`
   }, callback);
 }
 
-// Set to tweet every hour
-setInterval(tweet, 60*60*1000);
+// Set to tweet every 3 hours
+setInterval(tweet, 3*60*60*1000);
 
 // Do the first tweet
 tweet();
